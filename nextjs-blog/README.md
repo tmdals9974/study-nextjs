@@ -13,3 +13,13 @@
 - 브라우저 `Wappalyzer` Plugin을 이용하여 `각 사이트별 사용 라이브러리/프레임워크` 확인 가능
 - [해당 페이지](https://nextjs.org/showcase)에서 `next.js를 이용하여 제작한 사이트` 확인 가능
 - [해당 페이지](https://vercel.com/templates/next.js)에서 `코드 사용 예시` 확인 가능
+
+## Part 2. Next.js 시작하기
+
+### Ch 01. Nextjs 기본 기능
+
+#### 01. Next.js 기본 1(프레임워크 구조)
+
+- public 폴더는 컴포넌트 내에서 루트 경로로 접근 가능
+  - ex) 파일 경로: `/public/favicon.ico`
+  - ex) 접근 경로: `<link rel="icon" href="/favicon.ico" />`
