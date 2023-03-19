@@ -1,5 +1,6 @@
-import Head from "next/head";
 import React, { useEffect, useState } from "react";
+import Layout from "../components/Layout";
+import SubLayout from "../components/SubLayout";
 
 export default function CSR() {
   const [time, setTime] = useState();
@@ -9,15 +10,16 @@ export default function CSR() {
   }, []);
 
   return (
-    <div className="container">
-      <Head>
-        <title>Crate Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">{time}</h1>
-      </main>
-    </div>
+    <>
+      <h1 className="title">{time}</h1>
+    </>
   );
 }
+
+CSR.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      <SubLayout>{page}</SubLayout>
+    </Layout>
+  );
+};

@@ -1,4 +1,5 @@
-import Head from "next/head";
+import Layout from "../components/Layout";
+import SubLayout from "../components/SubLayout";
 
 export async function getStaticProps() {
   return {
@@ -8,15 +9,16 @@ export async function getStaticProps() {
 
 export default function SSG({ time }) {
   return (
-    <div className="container">
-      <Head>
-        <title>Crate Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">{time}</h1>
-      </main>
-    </div>
+    <>
+      <h1 className="title">{time}</h1>
+    </>
   );
 }
+
+SSG.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      <SubLayout>{page}</SubLayout>
+    </Layout>
+  );
+};
