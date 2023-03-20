@@ -197,6 +197,11 @@
   - Next.js가 제공하는 최적화 Image Component
     - Improved Performance
     - Visual Stability (CLS - Cumulative Layout Shift 방지)
-    - Faster Page Loads  (viewport 진입 시 로드 / blur 처리)
+    - Faster Page Loads (viewport 진입 시 로드 / blur 처리)
     - Asset Flexibility (리사이징)
   - `npx create-next-app --example image-component image-app` 명령어를 통해 Image 예제 프로젝트 생성 가능. (responsive/color 위주 살펴보면 좋음)
+
+#### **`04. 정리 1`**
+
+- 현재까지의 강의 내용 정리/요약 설명.
+
