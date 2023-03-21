@@ -37,7 +37,7 @@
           name: 이승민,
         },
       },
-    };
+    }
   }
 
   export default function Main({ user }) {
@@ -46,7 +46,7 @@
         <h1> 안녕하세요 {user.name}님 </h1>
         SSR입니다.
       </>
-    );
+    )
   }
   ```
 
@@ -67,22 +67,27 @@
   // 아래 params를 기반으로 static 파일 생성
   export async function getStaticPaths() {
     return {
-      paths: [{ params: { boardID: "1", postID: "1002" } }, { params: { boardID: "2", postID: "1006" } }],
+      paths: [
+        { params: { boardID: '1', postID: '1002' } },
+        { params: { boardID: '2', postID: '1006' } },
+      ],
       fallback: false, //false | true | blocking
-    };
+    }
   }
 
   export async function getStaticProps({ params }) {
-    const response = await fetch(`https://example.com/${params.boardID}/${params.postID}`);
-    const post = response.json();
+    const response = await fetch(
+      `https://example.com/${params.boardID}/${params.postID}`
+    )
+    const post = response.json()
 
     return {
       props: { post },
-    };
+    }
   }
 
   export default function Post({ post }) {
-    return <>{post}</>;
+    return <>{post}</>
   }
   ```
 
@@ -121,7 +126,7 @@
 
         <main>{children}</main>
       </div>
-    );
+    )
   }
   ```
 
@@ -138,14 +143,14 @@
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    );
+    )
   }
   ```
 
   ```javascript
   //pages/time.js
   export default function Post() {
-    return <>현재 시각은...</>;
+    return <>현재 시각은...</>
   }
   ```
 
@@ -161,7 +166,7 @@
         </h1>
         {children}
       </div>
-    );
+    )
   }
   ```
 
@@ -173,15 +178,15 @@
      * 컴포넌트마다 getLayout을 선언/리턴했다면, 해당 layout을 사용하도록.
      */
 
-    const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
-    return getLayout(<Component {...pageProps} />);
+    const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>)
+    return getLayout(<Component {...pageProps} />)
   }
   ```
 
   ```javascript
   //pages/time.js
   export default function Post() {
-    return <>현재 시각은...</>;
+    return <>현재 시각은...</>
   }
 
   Post.getLayout = function getLayout(page) {
@@ -189,8 +194,8 @@
       <Layout>
         <SubLayout>{page}</SubLayout>
       </Layout>
-    );
-  };
+    )
+  }
   ```
 
 - `Images` 컴포넌트
@@ -205,3 +210,19 @@
 
 - 현재까지의 강의 내용 정리/요약 설명.
 
+#### **`05. Next.js 기본 4 (Routing)`**
+
+- Next.js의 Router는 file-system 기반
+  - 우선순위
+  - 1.`pages/`
+  - 2.`src/pages/`
+
+- Dynamic Routing
+  - `slug`
+    - 대괄호 내 값을 변수로 받게됨.
+    - pages/category/[slug].js => /category/:slug (ex. /category/food)
+    - pages/[username]/info.js => /:username/info (ex. /jimmy/info)
+    - if. `/category/info`로 요청한다면? `/category:slug`로 대응됨. (명시된 값 우선)
+  - `...slug`
+    - 무한한 depth를 가지는 slug 생성
+    - pages/cart/[...slug].js => /cart/* (ex. /cart/2022/06/24)

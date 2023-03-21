@@ -1,10 +1,10 @@
-import Layout from "../components/Layout";
-import SubLayout from "../components/SubLayout";
+import Layout from 'components/Layout'
+import SubLayout from 'components/SubLayout'
 
 export async function getStaticProps() {
   return {
     props: { time: new Date().toISOString() },
-  };
+  }
 }
 
 export default function SSG({ time }) {
@@ -12,7 +12,7 @@ export default function SSG({ time }) {
     <>
       <h1 className="title">{time}</h1>
     </>
-  );
+  )
 }
 
 SSG.getLayout = function getLayout(page) {
@@ -20,5 +20,5 @@ SSG.getLayout = function getLayout(page) {
     <Layout>
       <SubLayout>{page}</SubLayout>
     </Layout>
-  );
-};
+  )
+}

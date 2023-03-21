@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function SubLayout({ children }) {
   return (
@@ -8,5 +8,5 @@ export default function SubLayout({ children }) {
       </h1>
       {children}
     </div>
-  );
+  )
 }

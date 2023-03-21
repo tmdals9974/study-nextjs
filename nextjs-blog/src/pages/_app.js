@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from 'components/Layout'
 
 export default function App({ Component, pageProps }) {
   /**
@@ -18,6 +18,6 @@ export default function App({ Component, pageProps }) {
    * 컴포넌트마다 getLayout을 선언/리턴했다면, 해당 layout을 사용하도록.
    */
 
-  const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
-  return getLayout(<Component {...pageProps} />);
+  const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>)
+  return getLayout(<Component {...pageProps} />)
 }
