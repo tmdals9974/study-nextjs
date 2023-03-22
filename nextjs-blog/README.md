@@ -213,6 +213,7 @@
 #### **`05. Next.js 기본 4 (Routing)`**
 
 - Next.js의 Router는 file-system 기반
+
   - 우선순위
   - 1.`pages/`
   - 2.`src/pages/`
@@ -225,4 +226,47 @@
     - if. `/category/info`로 요청한다면? `/category:slug`로 대응됨. (명시된 값 우선)
   - `...slug`
     - 무한한 depth를 가지는 slug 생성
-    - pages/cart/[...slug].js => /cart/* (ex. /cart/2022/06/24)
+    - pages/cart/[...slug].js => /cart/\* (ex. /cart/2022/06/24)
+
+#### **`06. Next.js 기본 5 (Shallow Routing)`**
+
+- `slug` 값 사용법
+
+  ```javascript
+  // pages/[category]/[id].js
+  import { useRouter } from 'next/router';
+  const router = useRouter();
+  const { category, id } = router.query;
+  ```
+
+  ```javascript
+  /**
+   * file: pages/cart/[...date].js
+   * url : cart/2022/06/25
+   */
+  
+  import { useRouter } from 'next/router';
+  const router = useRouter();
+  const { date } = router.query; 
+  //date = ["2022", "06", "25"]
+  ```
+
+- `QueryString` 값 사용법
+
+  ```javascript
+  // localhost:3000/search?key=test
+  import { useRouter } from 'next/router';
+  const router = useRouter();
+  const { key } = router.query;
+  ```
+
+- `Optional Slug`
+  - `pages/posts/[id].js` 만 생성되어있고, `pages/posts/index.js`가 없다면 `/posts/` 로 접근 시 404 페이지가 반환된다.
+  - 이 때, Optional로 생성한다면 빈 값으로 접근이 가능하다. (`pages/posts/[[id]].js`)
+
+- `Shallow Routing`
+  - `getServerSideProps` / `getStaticProps` 등을 다시 실행시키지 않고, 현재 상태를 잃지 않고 url을 바꾸는 방법
+    - ex) 사용자가 어떤 동작을 했고, 그 기록을 QueryString으로 남기고 싶을 때
+    - 1. `location.replace(url)` : 로컬 state 유지 안됨 (리렌더)
+    - 2. `router.push(url)` : 로컬 state 유지 / data fetching은 일어남
+    - 3. `router.push(url, as, { shallow: true})` : 로컬 state 유지 / data fetching 하지 않음
