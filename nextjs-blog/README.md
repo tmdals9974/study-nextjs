@@ -234,9 +234,9 @@
 
   ```javascript
   // pages/[category]/[id].js
-  import { useRouter } from 'next/router';
-  const router = useRouter();
-  const { category, id } = router.query;
+  import { useRouter } from 'next/router'
+  const router = useRouter()
+  const { category, id } = router.query
   ```
 
   ```javascript
@@ -244,10 +244,10 @@
    * file: pages/cart/[...date].js
    * url : cart/2022/06/25
    */
-  
-  import { useRouter } from 'next/router';
-  const router = useRouter();
-  const { date } = router.query; 
+
+  import { useRouter } from 'next/router'
+  const router = useRouter()
+  const { date } = router.query
   //date = ["2022", "06", "25"]
   ```
 
@@ -255,12 +255,13 @@
 
   ```javascript
   // localhost:3000/search?key=test
-  import { useRouter } from 'next/router';
-  const router = useRouter();
-  const { key } = router.query;
+  import { useRouter } from 'next/router'
+  const router = useRouter()
+  const { key } = router.query
   ```
 
 - `Optional Slug`
+
   - `pages/posts/[id].js` 만 생성되어있고, `pages/posts/index.js`가 없다면 `/posts/` 로 접근 시 404 페이지가 반환된다.
   - 이 때, Optional로 생성한다면 빈 값으로 접근이 가능하다. (`pages/posts/[[id]].js`)
 
@@ -270,3 +271,23 @@
     - 1. `location.replace(url)` : 로컬 state 유지 안됨 (리렌더)
     - 2. `router.push(url)` : 로컬 state 유지 / data fetching은 일어남
     - 3. `router.push(url, as, { shallow: true})` : 로컬 state 유지 / data fetching 하지 않음
+
+#### **`07. Next.js 기본 6 (API Routes)`**
+
+- API 생성
+  - `pages/api/` 하위 폴더에 파일 생성 시, 파일 이름으로 API가 생성됨.
+  - `slug`를 이용하여 pages와 동일하게 dynamic routing이 가능하다.
+  - 기본으로 `handler` 함수를 반환해주어야함.
+  - `request` 객체에서 cookies, query 등 다양한 Middle Ware를 활용 할 수 있다.
+  - `response` 함수 종류
+    - res.status(code)
+    - res.json(body): serializable object
+    - res.redirect(code, url)
+    - res.send(body): string/object/Buffer
+    ```javascript
+    // pages/api/user-info/[uid].js
+    export default function handler(req, res) {
+      const { uid } = req.query
+      res.status(200).json(uid ? userDetail[uid] : {})
+    }
+    ```
