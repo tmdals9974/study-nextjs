@@ -1,12 +1,10 @@
-# nextjs-blog
-
 ## Part 1. 오리엔테이션
 
 ### Ch 02. Next.js 소개
 
 #### 01. Next.js 소개 및 도구 - 환경 설정
 
-- `npx create-next-app nextjs-blog --use-npm --example` 명령어로 프로젝트 생성. (https://github.com/vercel/next-learn/tree/master/basics/learn-starter)
+- `npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"` 명령어로 프로젝트 생성. (https://github.com/vercel/next-learn/tree/master/basics/learn-starter)
 
 #### 02. Next.js로 만드는 사례 둘러보기 (showcase - examples)
 
@@ -37,7 +35,7 @@
           name: 이승민,
         },
       },
-    }
+    };
   }
 
   export default function Main({ user }) {
@@ -46,7 +44,7 @@
         <h1> 안녕하세요 {user.name}님 </h1>
         SSR입니다.
       </>
-    )
+    );
   }
   ```
 
@@ -67,27 +65,22 @@
   // 아래 params를 기반으로 static 파일 생성
   export async function getStaticPaths() {
     return {
-      paths: [
-        { params: { boardID: '1', postID: '1002' } },
-        { params: { boardID: '2', postID: '1006' } },
-      ],
+      paths: [{ params: { boardID: "1", postID: "1002" } }, { params: { boardID: "2", postID: "1006" } }],
       fallback: false, //false | true | blocking
-    }
+    };
   }
 
   export async function getStaticProps({ params }) {
-    const response = await fetch(
-      `https://example.com/${params.boardID}/${params.postID}`
-    )
-    const post = response.json()
+    const response = await fetch(`https://example.com/${params.boardID}/${params.postID}`);
+    const post = response.json();
 
     return {
       props: { post },
-    }
+    };
   }
 
   export default function Post({ post }) {
-    return <>{post}</>
+    return <>{post}</>;
   }
   ```
 
@@ -126,7 +119,7 @@
 
         <main>{children}</main>
       </div>
-    )
+    );
   }
   ```
 
@@ -143,14 +136,14 @@
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    )
+    );
   }
   ```
 
   ```javascript
   //pages/time.js
   export default function Post() {
-    return <>현재 시각은...</>
+    return <>현재 시각은...</>;
   }
   ```
 
@@ -166,7 +159,7 @@
         </h1>
         {children}
       </div>
-    )
+    );
   }
   ```
 
@@ -178,15 +171,15 @@
      * 컴포넌트마다 getLayout을 선언/리턴했다면, 해당 layout을 사용하도록.
      */
 
-    const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>)
-    return getLayout(<Component {...pageProps} />)
+    const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
+    return getLayout(<Component {...pageProps} />);
   }
   ```
 
   ```javascript
   //pages/time.js
   export default function Post() {
-    return <>현재 시각은...</>
+    return <>현재 시각은...</>;
   }
 
   Post.getLayout = function getLayout(page) {
@@ -194,8 +187,8 @@
       <Layout>
         <SubLayout>{page}</SubLayout>
       </Layout>
-    )
-  }
+    );
+  };
   ```
 
 - `Images` 컴포넌트
@@ -234,9 +227,9 @@
 
   ```javascript
   // pages/[category]/[id].js
-  import { useRouter } from 'next/router'
-  const router = useRouter()
-  const { category, id } = router.query
+  import { useRouter } from "next/router";
+  const router = useRouter();
+  const { category, id } = router.query;
   ```
 
   ```javascript
@@ -245,9 +238,9 @@
    * url : cart/2022/06/25
    */
 
-  import { useRouter } from 'next/router'
-  const router = useRouter()
-  const { date } = router.query
+  import { useRouter } from "next/router";
+  const router = useRouter();
+  const { date } = router.query;
   //date = ["2022", "06", "25"]
   ```
 
@@ -255,9 +248,9 @@
 
   ```javascript
   // localhost:3000/search?key=test
-  import { useRouter } from 'next/router'
-  const router = useRouter()
-  const { key } = router.query
+  import { useRouter } from "next/router";
+  const router = useRouter();
+  const { key } = router.query;
   ```
 
 - `Optional Slug`
@@ -287,11 +280,19 @@
     ```javascript
     // pages/api/user-info/[uid].js
     export default function handler(req, res) {
-      const { uid } = req.query
-      res.status(200).json(uid ? userDetail[uid] : {})
+      const { uid } = req.query;
+      res.status(200).json(uid ? userDetail[uid] : {});
     }
     ```
 
 #### **`08. 정리 2`**
 
 - 5~7강 강의 내용 정리/요약 설명.
+
+## Part 3. Practice : 블로그 프로젝트
+
+### Ch 01. 연습 프로젝트 실습
+
+#### **`01. 프로젝트 시작 (Link Component - Client-Side Navigation)`**
+
+- `npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"` 명령어로 프로젝트 생성. (https://github.com/vercel/next-learn/tree/master/basics/learn-starter)
