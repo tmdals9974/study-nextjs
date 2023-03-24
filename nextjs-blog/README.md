@@ -208,7 +208,7 @@
 
 #### **`04. 정리 1`**
 
-- 현재까지의 강의 내용 정리/요약 설명.
+- 1~3강 내용 정리/요약 설명.
 
 #### **`05. Next.js 기본 4 (Routing)`**
 
@@ -263,7 +263,7 @@
 - `Optional Slug`
 
   - `pages/posts/[id].js` 만 생성되어있고, `pages/posts/index.js`가 없다면 `/posts/` 로 접근 시 404 페이지가 반환된다.
-  - 이 때, Optional로 생성한다면 빈 값으로 접근이 가능하다. (`pages/posts/[[id]].js`)
+  - 이 때, Optional로 생성한다면 빈 값으로 접근이 가능하다. (`pages/posts/[[...id]].js`)
 
 - `Shallow Routing`
   - `getServerSideProps` / `getStaticProps` 등을 다시 실행시키지 않고, 현재 상태를 잃지 않고 url을 바꾸는 방법
@@ -278,7 +278,7 @@
   - `pages/api/` 하위 폴더에 파일 생성 시, 파일 이름으로 API가 생성됨.
   - `slug`를 이용하여 pages와 동일하게 dynamic routing이 가능하다.
   - 기본으로 `handler` 함수를 반환해주어야함.
-  - `request` 객체에서 cookies, query 등 다양한 Middle Ware를 활용 할 수 있다.
+  - `request` 객체에서 cookies, query 등 다양한 Middle Ware를 활용/추가 할 수 있다.
   - `response` 함수 종류
     - res.status(code)
     - res.json(body): serializable object
@@ -291,3 +291,7 @@
       res.status(200).json(uid ? userDetail[uid] : {})
     }
     ```
+
+#### **`08. 정리 2`**
+
+- 5~7강 강의 내용 정리/요약 설명.
