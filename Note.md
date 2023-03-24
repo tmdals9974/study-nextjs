@@ -296,3 +296,31 @@
 #### **`01. 프로젝트 시작 (Link Component - Client-Side Navigation)`**
 
 - `npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"` 명령어로 프로젝트 생성. (https://github.com/vercel/next-learn/tree/master/basics/learn-starter)
+
+- `Code Splitting`
+  - Next.js는 성능 최적화를 위해 Automatic Code Splitting을 제공한다.
+    - 최초 페이지 접근 시 해당 페이지를 그릴 때 `필요한 chunk만 로드`한다.
+    - 페이지 이동 시 목적지 페이지에 `필요한 chunk만 추가 로드`한다.
+
+- `Link Component`
+  - `Client Side Navigate`
+    - browser에서 url을 직접 쳐서 이동하는 것과 달리, JS 상에서 화면 컴포넌트를 교체하는 것을 Client side Navigate라 한다.
+    - Link 컴포넌트는 Client Side Navigate를 지원하는 컴포넌트이다.
+
+  - `Prefetching`
+    - Link 컴포넌트를 이용하면, Viewport에 Link 컴포넌트가 노출되었을 때 href로 연결된 페이지의 chunk를 로드한다.
+    - 예를 들어, `<Link href="/posts/1">링크</Link>` 컴포넌트가 Viewport에 노출되어 있다면 빠른 페이지 이동을 위해 `/posts/1 페이지의 리소스를 미리 로드`해둔다.
+
+  ```javascript
+  import Link from "next/link";
+
+  export default function Link() {
+    return (
+      <>
+        <Link href="/posts/1">첫번째 글</Link> //해당 페이지의 파일만 불러오며 페이지 이동 (네트워크 리소스 비용 적음), 내부 링크 연결 시 사용 추천.
+        //<a href="/posts/1">첫번째 글</a> //모든 파일을 새로 불러오며 페이지 이동 (네트워크 리소스 비용 큼), 외부 링크로 연결 시 사용 추천.
+      </>
+    );
+  }
+  ```
+
