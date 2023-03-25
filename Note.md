@@ -324,3 +324,6 @@
   }
   ```
 
+#### **`02. Layouts - Styling`**
+
+- CSS Modules를 이용한 Layout Styling 소개
