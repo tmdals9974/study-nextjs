@@ -327,3 +327,7 @@
 #### **`02. Layouts - Styling`**
 
 - CSS Modules를 이용한 Layout Styling 소개
+
+#### **`03. Pre-rendering - Data Fetching`**
+
+- 게시글 목록 읽어오는 함수 구현하며 여러 예제 살펴보기 (`/pages/index.js`, `/lib/posts.js`) 

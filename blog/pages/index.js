@@ -1,19 +1,46 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
+import { getSortedPostsData } from '../lib/posts';
 import utilStyles from '../styles/utils.module.css';
 
-export default function Home() {
+export async function getStaticProps() {
+  //현재는 SSG
+  //SSR로 사용 원할 시 getStaticProps => getServerSideProps로 변경
+  //CSR로 사용 원할 시 API 정의 후, Home 컴포넌트에서 api 통신으로 가능.
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
+        <p>안녕하세요.</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          패스트캠퍼스 강의를 따라 Next.js를 학습하고있는 주니어 프론트엔드
+          개발자 이승민입니다.
         </p>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
