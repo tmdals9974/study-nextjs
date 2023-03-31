@@ -330,4 +330,12 @@
 
 #### **`03. Pre-rendering - Data Fetching`**
 
-- 게시글 목록 읽어오는 함수 구현하며 여러 예제 살펴보기 (`/pages/index.js`, `/lib/posts.js`) 
+- md 파일들의 메타데이터를 읽어서 게시글 목록으로 보여주는 기능 구현 (`/pages/index.js`, `/lib/posts.js`, `npm i gray-matter`) 
+
+#### **`04. Dynamic Routes`**
+
+- md 파일의 내용을 보여주는 게시글 상세 페이지 구현 (`pages/posts/[id].js`, `/lib/posts.js`, `npm i remark remark-html`)
+- `fallback` 옵션 (`getStaticPaths` 함수 리턴 값)
+  - false: `getStaticPaths`의 리턴값에 있는 주소만 미리 생성. 그 외 주소는 모두 404 페이지 리턴.
+  - true: `getStaticPaths`에 없는 주소로 요청이 들어올 경우, 첫 요청 시 생성을 시도한다. (`getStaticProps`를 실행해줌. 페이지 생성 중일 때 fallback 버전 렌더링.) (주로 정적파일이 많아 빌드시간이 오래걸릴 때 사용.)
+  - 'blocking': true와 동일하지만, fallback 버전 렌더링을 하지 않고 로딩될 때까지 렌더링이 멈춘다.
