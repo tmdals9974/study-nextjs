@@ -6,16 +6,10 @@ import utilStyles from '../../styles/utils.module.css';
 
 export async function getStaticPaths() {
   let paths = getAllPostIds();
-  paths = [
-    {
-      params: {
-        id: 'ssg-ssr',
-      },
-    },
-  ];
+
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 

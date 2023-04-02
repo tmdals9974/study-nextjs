@@ -10,6 +10,7 @@ export async function getStaticProps() {
   //SSR로 사용 원할 시 getStaticProps => getServerSideProps로 변경
   //CSR로 사용 원할 시 API 정의 후, Home 컴포넌트에서 api 통신으로 가능.
   const allPostsData = getSortedPostsData();
+
   return {
     props: {
       allPostsData,

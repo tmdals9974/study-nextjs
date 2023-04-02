@@ -2,7 +2,7 @@ import { createPost } from '../../../lib/posts';
 import { format } from 'date-fns';
 
 export default async function handler(req, res) {
-  const [id, title, content] = req.body;
+  const { id, title, content } = req.body;
 
   try {
     await createPost({

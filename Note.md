@@ -341,4 +341,8 @@
   - 'blocking': true와 동일하지만, fallback 버전 렌더링을 하지 않고 로딩될 때까지 렌더링이 멈춘다.
 
 #### **`05. API Routes - 배포하기(1)`**
+- 게시글 작성 기능 구현
 
+#### **`06. API Routes - 배포하기(2)`**
+- Vercel에 Github repository를 연동하여 배포하는 과정 실습
+- 단, Vercel에서는 File Write 권한이 없음.
