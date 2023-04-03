@@ -298,12 +298,15 @@
 - `npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"` 명령어로 프로젝트 생성. (https://github.com/vercel/next-learn/tree/master/basics/learn-starter)
 
 - `Code Splitting`
+
   - Next.js는 성능 최적화를 위해 Automatic Code Splitting을 제공한다.
     - 최초 페이지 접근 시 해당 페이지를 그릴 때 `필요한 chunk만 로드`한다.
     - 페이지 이동 시 목적지 페이지에 `필요한 chunk만 추가 로드`한다.
 
 - `Link Component`
+
   - `Client Side Navigate`
+
     - browser에서 url을 직접 쳐서 이동하는 것과 달리, JS 상에서 화면 컴포넌트를 교체하는 것을 Client side Navigate라 한다.
     - Link 컴포넌트는 Client Side Navigate를 지원하는 컴포넌트이다.
 
@@ -317,8 +320,9 @@
   export default function Link() {
     return (
       <>
-        <Link href="/posts/1">첫번째 글</Link> //해당 페이지의 파일만 불러오며 페이지 이동 (네트워크 리소스 비용 적음), 내부 링크 연결 시 사용 추천.
-        //<a href="/posts/1">첫번째 글</a> //모든 파일을 새로 불러오며 페이지 이동 (네트워크 리소스 비용 큼), 외부 링크로 연결 시 사용 추천.
+        <Link href="/posts/1">첫번째 글</Link> //해당 페이지의 파일만 불러오며 페이지 이동 (네트워크 리소스 비용 적음),
+        내부 링크 연결 시 사용 추천. //<a href="/posts/1">첫번째 글</a> //모든 파일을 새로 불러오며 페이지 이동
+        (네트워크 리소스 비용 큼), 외부 링크로 연결 시 사용 추천.
       </>
     );
   }
@@ -330,7 +334,7 @@
 
 #### **`03. Pre-rendering - Data Fetching`**
 
-- md 파일들의 메타데이터를 읽어서 게시글 목록으로 보여주는 기능 구현 (`/pages/index.js`, `/lib/posts.js`, `npm i gray-matter`) 
+- md 파일들의 메타데이터를 읽어서 게시글 목록으로 보여주는 기능 구현 (`/pages/index.js`, `/lib/posts.js`, `npm i gray-matter`)
 
 #### **`04. Dynamic Routes`**
 
@@ -341,8 +345,14 @@
   - 'blocking': true와 동일하지만, fallback 버전 렌더링을 하지 않고 로딩될 때까지 렌더링이 멈춘다.
 
 #### **`05. API Routes - 배포하기(1)`**
+
 - 게시글 작성 기능 구현
 
 #### **`06. API Routes - 배포하기(2)`**
+
 - Vercel에 Github repository를 연동하여 배포하는 과정 실습
 - 단, Vercel에서는 File Write 권한이 없음.
+
+#### **`07. 연습 정리`**
+
+- 1~6강 강의 내용 정리/요약 설명.
