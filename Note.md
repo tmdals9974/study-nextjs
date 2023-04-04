@@ -356,3 +356,17 @@
 #### **`07. 연습 정리`**
 
 - 1~6강 강의 내용 정리/요약 설명.
+
+
+### Ch 02. 블로그 커스텀해보기
+
+#### **`01. 나만의 블로그 만들기(UI) (1)`**
+
+- [블로그 테마 저장소](https://jamstackthemes.dev)에서 여러 블로그 테마 참고 가능
+- [TailwindCSS 적용 가이드](https://tailwindcss.com/docs/guides/nextjs)를 참고하여 프로젝트 셋업 (**VSCode Extensions - Tailwind CSS Intellisense, PostCSS Language Support 설치 필요**)
+- 요구사항
+  - [TailwindCSS](https://tailwindcss.com/)를 사용해본다. (npm: `tailwindcss`, `postcss`, `autoprefixer`)
+  - [무료 SVG를 다운로드](https://www.iconpacks.net/)하여 사용해본다.
+  - 다크모드/라이트모드 전환 가능해야하며, Icon button을 누르면 mode 바뀐다. 새로고침을 유지되어야 한다.
+  - posts 폴더에 .md 뿐 아니라 .mdx (md + jsx)도 지원하게 한다. (npm: `next-mdx-remote`)
+  - code block 은 스타일링을 통해 이쁘게 노출시켜주며 우상단 copy 버튼을 클릭하면 코드 내용이 복사된다. (npm: `react-syntax-highlighter`)
