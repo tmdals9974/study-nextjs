@@ -370,3 +370,7 @@
   - 다크모드/라이트모드 전환 가능해야하며, Icon button을 누르면 mode 바뀐다. 새로고침을 유지되어야 한다.
   - posts 폴더에 .md 뿐 아니라 .mdx (md + jsx)도 지원하게 한다. (npm: `next-mdx-remote`)
   - code block 은 스타일링을 통해 이쁘게 노출시켜주며 우상단 copy 버튼을 클릭하면 코드 내용이 복사된다. (npm: `react-syntax-highlighter`)
+
+#### **`02. 나만의 블로그 만들기(UI) (2)`**
+
+- Component를 만들고 mdx에서 호출하여 화면에 보여주는 기능 완성.
