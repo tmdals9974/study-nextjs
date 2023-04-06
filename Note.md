@@ -357,7 +357,6 @@
 
 - 1~6강 강의 내용 정리/요약 설명.
 
-
 ### Ch 02. 블로그 커스텀해보기
 
 #### **`01. 나만의 블로그 만들기(UI) (1)`**
@@ -374,3 +373,16 @@
 #### **`02. 나만의 블로그 만들기(UI) (2)`**
 
 - Component를 만들고 mdx에서 호출하여 화면에 보여주는 기능 완성.
+
+#### **`03. 나만의 블로그 만들기(기능) (1)`**
+
+- SEO를 위한 도구
+  - robots.txt : 검색엔진/크롤러 등이 이 사이트의 내용을 수집해가도 되는지 권한 체크를 하는 페이지
+  - sitemap.xml : 도메인 내 페이지 목록 
+  - `next-sitemap` 라이브러리 사용하여 위 두가지 파일 모두 자동화 가능 (`next-sitemap.config.js` 파일 참고)
+
+- 댓글 기능
+  - [`utterances`](https://utteranc.es/)를 이용해 Github 기반 댓글기능 구현 가능
+  - Github의 Issues와 Comments 기능을 활용하기에 Github Public Repsitory가 필요하다.
+  - [`Github Markeplace`](https://github.com/marketplace)에서 Utterances 설치 필요
+  - `Utterances` 세팅 후 기능 구현 (`Utterances.js` 파일 참고, 세팅 내용은 강의영상 참고)
