@@ -377,8 +377,9 @@
 #### **`03. 나만의 블로그 만들기(기능) (1)`**
 
 - SEO를 위한 도구
+
   - robots.txt : 검색엔진/크롤러 등이 이 사이트의 내용을 수집해가도 되는지 권한 체크를 하는 페이지
-  - sitemap.xml : 도메인 내 페이지 목록 
+  - sitemap.xml : 도메인 내 페이지 목록
   - `next-sitemap` 라이브러리 사용하여 위 두가지 파일 모두 자동화 가능 (`next-sitemap.config.js` 파일 참고)
 
 - 댓글 기능
@@ -386,3 +387,12 @@
   - Github의 Issues와 Comments 기능을 활용하기에 Github Public Repsitory가 필요하다.
   - [`Github Markeplace`](https://github.com/marketplace)에서 Utterances 설치 필요
   - `Utterances` 세팅 후 기능 구현 (`Utterances.js` 파일 참고, 세팅 내용은 강의영상 참고)
+
+#### **`04. 나만의 블로그 만들기(기능) (2)`**
+
+- ESLint
+  - eslint 패키지 설치 (`npm i -D eslint`)
+  - `package.json` > `scripts` > `eslint --init` 등록 후 실행 (실행 후 삭제)
+  - `.eslintrc.json` > `rules` > 오류 예외처리 항목 추가
+  - tailwind plugin 설치 (`npm i -D eslint-plugin-tailwindcss`) > `.eslintrc.json` 수정
+  - [next.js 설정](https://nextjs.org/docs/basic-features/eslint) (`npm i -D @next/eslint-plugin-next`) > `.eslintrc.json` 수정
