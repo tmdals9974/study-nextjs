@@ -396,3 +396,16 @@
   - `.eslintrc.json` > `rules` > 오류 예외처리 항목 추가
   - tailwind plugin 설치 (`npm i -D eslint-plugin-tailwindcss`) > `.eslintrc.json` 수정
   - [next.js 설정](https://nextjs.org/docs/basic-features/eslint) (`npm i -D @next/eslint-plugin-next`) > `.eslintrc.json` 수정
+
+### Ch 03. 프론트엔드 개발자를 위한 꿀팁
+
+#### **`01. 프론트엔드 개발자가 알아야 할 기술`**
+
+1. 좋은 프론트엔드 개발자가 되기 위해서는 어떤 부분을 신경써야 할까요?
+
+- 개방적인 자세, 꾸준한 학습
+
+2. 프론트엔드 개발자가 퍼블리싱/알고리즘/배포/백엔드 등에 대한 지식이 필요한가?
+
+- 필요하다. [프론트엔드 개발자 로드맵](https://roadmap.sh/frontend), [리액트 개발자 로드맵](https://roadmap.sh/react)
+- 패러다임이 빠르게 변하기에 항상 공부하는 것이 중요하다.
