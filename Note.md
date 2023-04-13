@@ -413,8 +413,14 @@
 #### **`02. 부족한 부분을 채우는 방법`**
 
 1. 무엇을 모르는 지 아는 것이 중요하다.
-  
+
 - 로드맵을 통해 큰 그림 안에서 모르는 부분을 찾거나 풀 수 없는 문제를 만나봐야 한다.
 - 비슷한 라이브러리들을 찾아본다 (ex: moment와 비슷한 라이브러리 찾는 방법 : 1. npm trends, 2. moment alternatives 검색)
 
 2. 꾸준히 배운 것을 프로젝트로 만들어봐야 한다.
+
+### Ch 04. React 프로젝트 마이그레이션
+
+#### **`01. React Project Next.js로 마이그레이션 1`**
+
+- CRA를 next.js로 마이그레이션 [공식문서](https://nextjs.org/docs/migrating/from-create-react-app), 자세한 내용은 강의 영상 참고.
