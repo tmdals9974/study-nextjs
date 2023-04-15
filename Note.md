@@ -424,3 +424,7 @@
 #### **`01. React Project Next.js로 마이그레이션 1`**
 
 - CRA를 next.js로 마이그레이션 [공식문서](https://nextjs.org/docs/migrating/from-create-react-app), 자세한 내용은 강의 영상 참고.
+
+#### **`02. React Project Next.js로 마이그레이션 2`**
+
+- CRA로 만든 react-router 프로젝트를 next.js로 마이그레이션 [공식문서](https://nextjs.org/docs/migrating/from-react-router), 자세한 내용은 강의 영상 참고.
