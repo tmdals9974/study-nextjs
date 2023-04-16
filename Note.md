@@ -428,3 +428,11 @@
 #### **`02. React Project Next.js로 마이그레이션 2`**
 
 - CRA로 만든 react-router 프로젝트를 next.js로 마이그레이션 [공식문서](https://nextjs.org/docs/migrating/from-react-router), 자세한 내용은 강의 영상 참고.
+
+## Part 4. Next.js 심화
+
+### Ch 01. Next.js 공식문서 뜯어보기
+
+#### **`01. Next.js 공식문서 살펴보기`**
+
+- 공식문서를 통해 오피셜한 내용을 학습할 수 있음. 혼자 공부하는 습관 필요 강조.
