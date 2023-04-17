@@ -436,3 +436,17 @@
 #### **`01. Next.js 공식문서 살펴보기`**
 
 - 공식문서를 통해 오피셜한 내용을 학습할 수 있음. 혼자 공부하는 습관 필요 강조.
+
+### Ch 02. 심화 Step 1
+
+#### **`01. Next.js 심화 1 (Compiler & Preview Mode)`**
+
+- [Compiler](https://nextjs.org/docs/advanced-features/compiler)
+  - 고급 프로그래밍 언어(사람이 이해하기 쉬운 언어)를 실행 프로그램으로 만들기 위해 저급 프로그래밍 언어(컴퓨터가 이해하기 쉬운 언어)로 바꾸는 데 사용된다.
+  - Next.js는 `SWC` Compiler를 사용하여, transform/minify 역할을 한다. (Babel, Terser 대체)
+    - SWC는 Rust로 제작되어 다른 번들러들과 달리 훨씬 빠른 속도를 가진다.
+    - `Terser`: A Javascript mangler/compressor toolkit for ES6+ (보통 웹팩 등 번들러에 내장되어있음)
+
+- [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
+  - 배포 이후 동적으로 추가/수정되는 데이터를 화면에서 미리볼 수 있게 할 수 있는 기능 
+    - ex: SSG로 Post들을 보여주는 블로그의 경우, 글을 추가/수정 후 Preview Mode를 이용하여 변경된 글을 볼 수 있다. 단, 다른 사용자에게도 노출되니 Preview-Clear를 통해 초기화해주어야 한다.
