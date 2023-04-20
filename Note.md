@@ -450,3 +450,18 @@
 - [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
   - 배포 이후 동적으로 추가/수정되는 데이터를 화면에서 미리볼 수 있게 할 수 있는 기능 
     - ex: SSG로 Post들을 보여주는 블로그의 경우, 글을 추가/수정 후 Preview Mode를 이용하여 변경된 글을 볼 수 있다. 단, 다른 사용자에게도 노출되니 Preview-Clear를 통해 초기화해주어야 한다.
+
+#### **`02. Next.js 심화 2 (Dynamic Import & Static Export)`**
+
+- [Dynamic Import](https://nextjs.org/docs/advanced-features/dynamic-import)
+  - 사용하는 시점에 리소스 로드하는 기능
+  - Component Lazy Load:  `dynamic(() => import("../components/Button"), {suspense: true})`
+  - React 18 미만 버전에선, suspense 대신 loading 값으로 로딩 중 노출할 컴포넌트 설정 가능
+  - ssr: false를 주면 client-side 에서만 dynamically load하게 된다. (window 등 존재여부 판단하지 않아도 됨)
+  - 외부라이브러리도 import 함수를 이용하여 dynamic import가 가능하다
+- Automatic Static Optimization
+  - 빌드 시 정적인 페이지는 html로, 동적인 파일은 js로 자동으로 생성해준다. 
+- 정적인 파일일 경우, 초기 로딩시에는 router의 query값을 불러오지 못하고 hydration 이후에 query 값을 읽을 수 있다.
+- [Static Export](https://nextjs.org/docs/advanced-features/static-html-export)
+  - Next.js 프로젝트를 정적인 파일들만으로 Build 하는 기능.
+  - 단, Node.js 서버가 있어야지만 동작하는 기능들은 포기해야함 (ex: Dynamic route, Dynamic Import, getStaticProps, getStaticPaths, Image Component, etc..)
