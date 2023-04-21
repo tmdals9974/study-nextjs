@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Date from '../components/date';
-import Layout, { siteTitle } from '../components/Layout';
+import { siteTitle } from '../pages/_document';
 import { getSortedPostsData } from '../lib/posts';
 import utilStyles from '../styles/utils.module.css';
 
@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -45,6 +45,6 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   );
 }

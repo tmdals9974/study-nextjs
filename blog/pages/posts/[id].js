@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Date from '../../components/date';
-import Layout from '../../components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import utilStyles from '../../styles/utils.module.css';
 import { MDXRemote } from 'next-mdx-remote';
 import CodeBlock from '../../components/CodeBlock';
+import { siteTitle } from '../_document';
 
 export async function getStaticPaths() {
   let paths = getAllPostIds();
@@ -39,9 +39,9 @@ const components = { Button, CodeBlock };
 
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>{postData.title}</title>
+        <title>{`${siteTitle} - ${postData.title}`}</title>
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
@@ -55,6 +55,6 @@ export default function Post({ postData }) {
           <MDXRemote {...postData.mdxSource} components={components} />
         )}
       </article>
-    </Layout>
+    </>
   );
 }

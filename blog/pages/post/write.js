@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
-import Layout from '../../components/Layout';
 import Link from 'next/link';
+import Head from 'next/head';
+import { siteTitle } from '../_document';
 
 export default function write() {
   const idRef = useRef(undefined);
@@ -40,32 +41,51 @@ export default function write() {
     }
   };
   return (
-    <Layout>
+    <>
+      <Head>
+        <title>{`${siteTitle} - Write a post`}</title>
+      </Head>
       <h1>Write a post</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="id" placeholder="id" required ref={idRef} />
+        <input
+          type="text"
+          className="rounded bg-pink-50"
+          name="id"
+          placeholder="id"
+          required
+          ref={idRef}
+        />
+        <br />
         <br />
         <input
           type="text"
+          className="rounded bg-pink-50"
           name="title"
           placeholder="title"
           required
           ref={titleRef}
         />
         <br />
+        <br />
         <textarea
           type="text"
+          className="rounded bg-pink-50"
           name="content"
           placeholder="content"
           required
           ref={contentRef}
         />
         <br />
-        <input type="submit" value="Create" />
+        <br />
+        <input
+          className="rounded bg-pink-50 px-2"
+          type="submit"
+          value="Create"
+        />
       </form>
       {showLink && (
         <Link href={`/posts/${idRef.current.value}`}>Created Post</Link>
       )}
-    </Layout>
+    </>
   );
 }
