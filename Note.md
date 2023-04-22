@@ -501,3 +501,7 @@
   ```
 - [custom `Error Page`](https://nextjs.org/docs/advanced-features/custom-error-page)
   - Error Code에 해당되는 컴포넌트를 만들어두면 자동으로 매칭해서 반환해줌.
+
+#### **`04. Next.js 정리 1`**
+
+- 1~3강 내용 정리/요약 설명.
