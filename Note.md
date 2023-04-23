@@ -478,12 +478,14 @@
     - 에러핸들링 설정
     - GlobalCSS 설정
 - [Custom `Document`](https://nextjs.org/docs/advanced-features/custom-document)
+
   - `pages/_document.js` 파일 커스텀 가능. 최초 도큐먼트를 설정.
-  - _document는 server에서 동작하기에 onClick과 같은 브라우저 이벤트는 동작하지 않는다.
+  - \_document는 server에서 동작하기에 onClick과 같은 브라우저 이벤트는 동작하지 않는다.
   - not Data Fetching methods
+
   ```javascript
   //pages/_document.js
-  import { Html, Head, Main, NextScript } from 'next/document';
+  import { Html, Head, Main, NextScript } from "next/document";
 
   export default function Documnet() {
     return (
@@ -499,9 +501,29 @@
     );
   }
   ```
+
 - [custom `Error Page`](https://nextjs.org/docs/advanced-features/custom-error-page)
   - Error Code에 해당되는 컴포넌트를 만들어두면 자동으로 매칭해서 반환해줌.
 
 #### **`04. Next.js 정리 1`**
 
 - 1~3강 내용 정리/요약 설명.
+
+### Ch 03. 심화 Step 2
+
+#### **`01. Next.js 심화 4 (Performance 측정)`**
+
+- [Web Performance](https://web.dev/vitals/)
+  - Web Peroformance 측정 기준
+    - Largest Contentful Paint (최대 콘텐츠풀 페인트, `LCP`): 페이지가 처음으로 로딩된 후 2.5초 이내에 발생
+    - First Input Delay (최초 입력 지연, `FID`): 상호 작용을 측정 (100밀리초)
+    - Cumulative Layout Shift (누적 레이아웃 시프트, `CLS`): 시각적 안정성을 측정 (페이지에서 0.1 이하 유지)
+- Google을 활용한 Performance 측정
+  - Web Performance 측정 페이지
+    - [https://developers.google.com/speed](https://developers.google.com/speed)
+    - [https://pagespeed.web.dev/](https://pagespeed.web.dev/)
+- [Measuring Performance](https://nextjs.org/docs/advanced-features/measuring-performance)
+  - Next.js에서 제공하는 함수를 이용하여 소스내에서 자체적으로 퍼포먼스 측정이 가능하다.
+    - reportWebVitals
+    - metric.name
+    - custom metrics
