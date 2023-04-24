@@ -1,8 +1,9 @@
 import '../styles/global.css';
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -17,7 +18,9 @@ export default function App({ Component, pageProps }) {
           includeSeconds: true,
         })}
       </div>
-      <Component {...pageProps} />
+      <ErrorBoundary fallbackComponent={<div>hi</div>}>
+        <Component {...pageProps} />
+      </ErrorBoundary>
     </Layout>
   );
 }

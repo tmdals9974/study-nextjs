@@ -5,6 +5,7 @@ import utilStyles from '../../styles/utils.module.css';
 import { MDXRemote } from 'next-mdx-remote';
 import CodeBlock from '../../components/CodeBlock';
 import { siteTitle } from '../_document';
+import { useState } from 'react';
 
 export async function getStaticPaths() {
   let paths = getAllPostIds();
@@ -36,6 +37,19 @@ const Button = ({ children }) => {
   );
 };
 const components = { Button, CodeBlock };
+const ErrorComponent = () => {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    throw new Error('Error occured');
+  }
+
+  return (
+    <button className="rounded px-2 bg-gren-500" onClick={() => setError(true)}>
+      Error fire
+    </button>
+  );
+};
 
 export default function Post({ postData }) {
   return (
@@ -43,6 +57,7 @@ export default function Post({ postData }) {
       <Head>
         <title>{`${siteTitle} - ${postData.title}`}</title>
       </Head>
+      <ErrorComponent/>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>

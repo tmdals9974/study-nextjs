@@ -527,3 +527,12 @@
     - reportWebVitals
     - metric.name
     - custom metrics
+
+#### **`02. Next.js 심화 5 (Error Handling)`**
+
+- [Error Handling](https://nextjs.org/docs/advanced-features/error-handling)
+  - Handling Errors in Development => Overlay
+  - Handling Server Erros => Custom Error Page 
+    - `pages/404.js`와 같이 에러코드로 파일명 정의 시, 해당 에러코드로 에러 발생 시 자동 반환.
+    - `pages/_error.js` 로 파일 생성 시, 별도 에러 핸들링이 없다면 자동 반환.
+  - Handling Client Erros => [React Error Boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)
