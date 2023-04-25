@@ -45,7 +45,7 @@ const ErrorComponent = () => {
   }
 
   return (
-    <button className="rounded px-2 bg-gren-500" onClick={() => setError(true)}>
+    <button className="rounded px-2 bg-green-500" onClick={() => setError(true)}>
       Error fire
     </button>
   );

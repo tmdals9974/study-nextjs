@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
           includeSeconds: true,
         })}
       </div>
-      <ErrorBoundary fallbackComponent={<div>hi</div>}>
+      <ErrorBoundary>
         <Component {...pageProps} />
       </ErrorBoundary>
     </Layout>
