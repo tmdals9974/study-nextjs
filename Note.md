@@ -532,12 +532,13 @@
 
 - [Error Handling](https://nextjs.org/docs/advanced-features/error-handling)
   - Handling Errors in Development => Overlay
-  - Handling Server Erros => Custom Error Page 
+  - Handling Server Erros => Custom Error Page
     - `pages/404.js`와 같이 에러코드로 파일명 정의 시, 해당 에러코드로 에러 발생 시 자동 반환.
     - `pages/_error.js` 로 파일 생성 시, 별도 에러 핸들링이 없다면 자동 반환.
   - Handling Client Erros => [React Error Boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)
 
 #### **`03. Next.js 심화 6 (React 18과 함께 살펴보기)`**
+
 - [React 18](https://reactjs.org/blog/2022/03/29/react-v18.html)
   - 동시성: 기존에는 상태가 변경되면 update와 렌더링까지 react가 알아서 처리했으나, v18부터는 update와 렌더링 과정에 간섭이 간으하다.
   - [React 18 with Next.js](https://nextjs.org/docs/advanced-features/react-18/overview)
@@ -545,3 +546,7 @@
     - ex) 기존에서는 하나의 페이지를 통짜 SSR로 만들어야했지만, 현재는 헤더/사이드바/검색창까지는 CSR로, 검색결과창은 SSR로 그리는 식으로 가능하다.
     - https://nextjs.org/docs/advanced-features/react-18/server-components
     - https://github.com/vercel/next-react-server-components
+
+#### **`04. Next.js 정리 2`**
+
+- 1~3강 내용 정리/요약 설명.
