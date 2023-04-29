@@ -550,3 +550,17 @@
 #### **`04. Next.js 정리 2`**
 
 - 1~3강 내용 정리/요약 설명.
+
+### Ch 04. 심화 Step 3
+
+#### **`01. Next.js 심화 7 (Data Fetching API)`**
+
+- [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props)
+  - 이전 버전의 SSR 지원 함수. 현재는 getStaticProps와 getServerSideProps로 대체되었다.
+  - Children component에서 사용하면 안되고 Page에서 사용해야함.
+- [getServerSideProps](https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props)
+  - SSR 지원 함수
+- [getStaticProps](https://nextjs.org/docs/api-reference/data-fetching/get-static-props)
+  - SSG 지원 함수
+- [getStaticPaths](https://nextjs.org/docs/api-reference/data-fetching/get-static-paths)
+  - Dynamic Route 지원 함수
