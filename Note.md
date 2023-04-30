@@ -564,3 +564,28 @@
   - SSG 지원 함수
 - [getStaticPaths](https://nextjs.org/docs/api-reference/data-fetching/get-static-paths)
   - Dynamic Route 지원 함수
+
+#### **`02. Next.js 심화 8 (Router & Link API)`**
+- [Router](https://nextjs.org/docs/api-reference/next/router)
+  - **Usage**
+    - useRouter: functional component only, hooks
+    - withRouter: class component only
+  - **Properties**
+    - pathname
+    - query
+    - isReady: isReady가 true일 때 router가 준비되어 query 등 속성이 정상적으로 들어
+    - etc...
+  - **Methods**
+    - push: history가 쌓이면서 페이지 이동
+    - replace: history가 쌓이지 않으면서 페이지 이동
+    - prefetch: 미리 페이지 내용을 받아옴. ex) 페이지 로딩 시, 다음 이동할 수 있는 페이지들을 미리 prefetch 해둔다.
+    - back
+    - reload
+  - **Events**
+    - Usage: router.events.on('eventName', function), router.events.off('eventName', function)
+    - routeChangeStart
+    - routeChangeComplete
+    - routeChangeError
+    - beforeHistoryChange
+    - hashChangeStart
+    - hashChangeComplete
