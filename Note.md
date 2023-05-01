@@ -589,3 +589,14 @@
     - beforeHistoryChange
     - hashChangeStart
     - hashChangeComplete
+
+#### **`03. Next.js 심화 9 (기타 advanced)`**
+- [next/image](https://nextjs.org/docs/api-reference/next/image)
+  - 하는 역할이 많아 서버 없이 동작하지 않음.
+  - 10버전 이상에서 사용 가능한 future-image가 있음.
+- [next/script](https://nextjs.org/docs/api-reference/next/script)
+  - sciprt Load 객체. 다양한 전략 설정 가능.
+- [next/amp](https://nextjs.org/docs/api-reference/next/amp)
+  - accelerated mobile pages (모바일에서 훨씬 더 빠른 페이지를 위한 컴포넌트)
+- [next/server](https://nextjs.org/docs/api-reference/next/server)
+  - 서버 헬퍼 객체
