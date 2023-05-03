@@ -600,3 +600,7 @@
   - accelerated mobile pages (모바일에서 훨씬 더 빠른 페이지를 위한 컴포넌트)
 - [next/server](https://nextjs.org/docs/api-reference/next/server)
   - 서버 헬퍼 객체
+
+#### **`04. Next.js 정리 3`**
+
+- 1~3강 내용 정리/요약 설명.
