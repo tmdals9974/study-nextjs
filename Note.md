@@ -604,3 +604,11 @@
 #### **`04. Next.js 정리 3`**
 
 - 1~3강 내용 정리/요약 설명.
+
+### Ch 05. 심화 Step 4
+
+#### **`01. Next.js 심화 10 (Configuration)`**
+
+- [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction)
+  - 각종 옵션 설정 가능, 변경 후 서버 재시작 필요
+  - 주요 옵션 : env variables, base path, rewrites, redirects, webpack config, headers, page extension, cdn support with asset prefix, 등
