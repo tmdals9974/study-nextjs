@@ -566,6 +566,7 @@
   - Dynamic Route 지원 함수
 
 #### **`02. Next.js 심화 8 (Router & Link API)`**
+
 - [Router](https://nextjs.org/docs/api-reference/next/router)
   - **Usage**
     - useRouter: functional component only, hooks
@@ -591,6 +592,7 @@
     - hashChangeComplete
 
 #### **`03. Next.js 심화 9 (기타 advanced)`**
+
 - [next/image](https://nextjs.org/docs/api-reference/next/image)
   - 하는 역할이 많아 서버 없이 동작하지 않음.
   - 10버전 이상에서 사용 가능한 future-image가 있음.
@@ -612,3 +614,8 @@
 - [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction)
   - 각종 옵션 설정 가능, 변경 후 서버 재시작 필요
   - 주요 옵션 : env variables, base path, rewrites, redirects, webpack config, headers, page extension, cdn support with asset prefix, 등
+
+#### **`02. Next.js 심화 11 (배포 관련 심화)`**
+
+- Vercel을 이용한 배포 옵션 설정에 대한 설명
+ 
