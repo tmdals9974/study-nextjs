@@ -16,4 +16,7 @@
 
 ## 📝정리 자료
 
-- [강의 내용 정리](./Note.md)
+- [Part 1. 오리엔테이션](./docs/part1.md)
+- [Part 2. Next.js 시작하기](./docs/part2.md)
+- [Part 3. Practice : 블로그 프로젝트](./docs/part3.md)
+- [Part 4. Next.js 심화](./docs/part4.md)
