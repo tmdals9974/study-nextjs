@@ -20,3 +20,4 @@
 - [Part 2. Next.js 시작하기](./docs/part2.md)
 - [Part 3. Practice : 블로그 프로젝트](./docs/part3.md)
 - [Part 4. Next.js 심화](./docs/part4.md)
+- [Part 5. Final Project : 커머스 서비스 만들기](./docs/part5.md)
