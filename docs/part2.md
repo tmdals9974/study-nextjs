@@ -255,6 +255,10 @@
 
 - API 생성
   - `pages/api/` 하위 폴더에 파일 생성 시, 파일 이름으로 API가 생성됨.
+  - **사용 이점** (강의에 없음, 구글링 정보)
+    - 외부 API 호출 정보를 은닉할수 있음
+    - CORS 회피 가능
+    - nextjs에서 최적화된 기능들을 제공하기에 유효성 검증, 객체 래핑 등 좀 더 편리함
   - `slug`를 이용하여 pages와 동일하게 dynamic routing이 가능하다.
   - 기본으로 `handler` 함수를 반환해주어야함.
   - `request` 객체에서 cookies, query 등 다양한 Middle Ware를 활용/추가 할 수 있다.
