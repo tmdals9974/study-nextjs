@@ -7,22 +7,20 @@ const notion = new Client({
 
 const databaseID = 'd81fe251d96e4c469a24ff41f715abab';
 
-async function addItem(name: string) {
+async function getItems() {
   try {
-    const response = await notion.pages.create({
-      parent: { database_id: databaseID },
-      properties: {
-        title: [
-          {
-            text: {
-              content: name,
-            },
-          },
-        ],
-      },
+    const response = await notion.databases.query({
+      database_id: databaseID,
+      sorts: [
+        {
+          property: '가격',
+          direction: 'ascending',
+        },
+      ],
     });
+    return response;
   } catch (error) {
-    console.error(`add-item error`);
+    console.error(`get-items error`);
     console.error(`=============================`);
     console.error(JSON.stringify(error));
     console.error(`=============================`);
@@ -30,6 +28,7 @@ async function addItem(name: string) {
 }
 
 type Data = {
+  items?: any;
   message: string;
 };
 
@@ -37,16 +36,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { name } = req.query;
-
-  if (name == null) {
-    return res.status(400).json({ message: 'No name' });
-  }
-
   try {
-    await addItem(String(name));
-    return res.status(200).json({ message: `Success ${name} added` });
+    const response = await getItems();
+    return res
+      .status(200)
+      .json({ items: response?.results, message: `Success` });
   } catch (error) {
-    return res.status(400).json({ message: `Failed ${name} added` });
+    return res.status(400).json({ message: `Failed` });
   }
 }

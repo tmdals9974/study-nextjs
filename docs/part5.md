@@ -29,3 +29,7 @@
     2. [Integrations](https://www.notion.so/my-integrations) 생성 (API 토큰)
     3. Workspace > 연결 추가 > 생성한 Integrations 연결
     4. npm `@notionhq/client` 을 이용하여 CRUD 가능
+
+### 01. Notion Public API 활용 (2)
+
+- Notion CRUD API를 이용하여 예시 페이지 생성
