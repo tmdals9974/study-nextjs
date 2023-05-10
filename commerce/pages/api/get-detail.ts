@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from '@notionhq/client';
 
 const notion = new Client({
-  auth: 'secret_6lituGDZgKmRiKZomB1cPJjclqF0XFTytfmUiN0XuUU',
+  auth: process.env.NOTION_AUTH_TOKEN || "",
 });
 
 async function getDetail(pageId: string, propertyId: string) {

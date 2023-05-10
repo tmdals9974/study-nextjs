@@ -2,10 +2,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from '@notionhq/client';
 
 const notion = new Client({
-  auth: 'secret_6lituGDZgKmRiKZomB1cPJjclqF0XFTytfmUiN0XuUU',
+  auth: process.env.NOTION_AUTH_TOKEN || "",
 });
 
-const databaseID = 'd81fe251d96e4c469a24ff41f715abab';
+const databaseID = process.env.NOTION_DATABASE_PRODUCT || "";
 
 async function getItems() {
   try {
