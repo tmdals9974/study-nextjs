@@ -5,11 +5,19 @@ import styles from '../styles/Home.module.css';
 import { useEffect, useRef, useState } from 'react';
 
 const Home: NextPage = () => {
+  // const [products, setProducts] = useState<
+  //   { id: string; properties: { id: string }[] }[]
+  // >([]);
   const [products, setProducts] = useState<
-    { id: string; properties: { id: string }[] }[]
+    { id: string; name: string }[]
   >([]);
+  // useEffect(() => {
+  //   fetch('/api/get-items')
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data.items));
+  // }, []);
   useEffect(() => {
-    fetch('/api/get-items')
+    fetch('/api/get-products')
       .then((res) => res.json())
       .then((data) => setProducts(data.items));
   }, []);
@@ -43,7 +51,12 @@ const Home: NextPage = () => {
 
         <div>
           <p>Product List</p>
-          {products &&
+          {
+            products && products.map(item => (
+              <div key={item.id}>{item.name}</div>
+            ))
+          }
+          {/* {products &&
             products.map((item) => (
               <div key={item.id}>
                 {item.properties &&
@@ -64,7 +77,7 @@ const Home: NextPage = () => {
                 <br />
                 <br />
               </div>
-            ))}
+            ))} */}
         </div>
       </main>
 

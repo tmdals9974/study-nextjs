@@ -33,3 +33,57 @@
 ### 01. Notion Public API 활용 (2)
 
 - Notion CRUD API를 이용하여 예시 페이지 생성
+
+### 02. Prisma & PlanetScale 활용 (1)
+
+- [PlanetScale](https://planetscale.com)
+
+  - MYSQL을 이용한 serverless database platform
+  - [DB 생성 튜토리얼](https://docs.planetscale.com/docs/tutorials/planetscale-quick-start-guide)
+  - [Nextjs와 연결 방법](https://docs.planetscale.com/docs/tutorials/connect-nextjs-app)
+
+- [Prisma](https://www.prisma.io)
+  - ORM 객체와 DB 맵핑 도구
+  - [Prisma를 이용한 Nextjs Fullstack 예시](https://github.com/prisma/prisma-examples/tree/latest/typescript/rest-nextjs-api-routes)
+
+1. DB 생성 튜토리얼을 따라하여 categories, products 테이블 생성
+2. `npm i -D prisma`
+3. `npm i @prisma/client`
+4. PlanetScale에서 Prisma용 Connect 생성 후 .env 파일 내용 복사
+5. 아래와 같이 schema.prisma 파일 작성
+
+```prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model categories {
+  id Int @id @default(autoincrement())
+  name String
+}
+
+model products {
+  id Int @id @default(autoincrement())
+  name String
+  image_url String?
+  category_id Int
+
+  @@index([category_id])
+}
+```
+
+6. `npx prisma generate`
+7. 아래 코드를 이용하여 사용 가능
+
+```javascript
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+const products = await prisma.products.findMany();
+```
