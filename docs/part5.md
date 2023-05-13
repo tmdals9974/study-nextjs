@@ -87,3 +87,8 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 const products = await prisma.products.findMany();
 ```
+
+### 02. Prisma & PlanetScale 활용 (2)
+
+- PlanetScale Branch 활용법 소개
+- Prisma API 소개
