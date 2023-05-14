@@ -87,3 +87,13 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 const products = await prisma.products.findMany();
 ```
+
+### 02. Prisma & PlanetScale 활용 (2)
+
+- PlanetScale Branch 활용법 소개
+- Prisma API 소개
+
+### 03. 스타일링 관련 라이브러리 살펴보기 TailwindCSS, Emotion
+
+- [tailwind + nextjs](https://tailwindcss.com/docs/guides/nextjs)를 보고 tailwind 설치/설정 가능
+- [Emotion](https://emotion.sh/docs/introduction)을 이용하여 CSS in JS 테스트
