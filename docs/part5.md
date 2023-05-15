@@ -97,3 +97,9 @@ const products = await prisma.products.findMany();
 
 - [tailwind + nextjs](https://tailwindcss.com/docs/guides/nextjs)를 보고 tailwind 설치/설정 가능
 - [Emotion](https://emotion.sh/docs/introduction)을 이용하여 CSS in JS 테스트
+
+## Ch 03. 커머스 기능 구현하기
+
+### 01. 상세 페이지 구현 (이미지 다루기) (1)
+
+- 상세페이지 이미지를 위해 `react-image-gallery`와 `nuka-carousel` 라이브러리 비교
