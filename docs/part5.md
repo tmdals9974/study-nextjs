@@ -107,3 +107,7 @@ const products = await prisma.products.findMany();
 ### 01. 상세 페이지 구현 (이미지 다루기) (2)
 
 - `nuka-carousel`을 이용한 상세페이지 구현
+
+### 02. 상세 페이지 구현 (콘텐츠 다루기) (1)
+  - SEO: robots.txt, sitemap ([next-sitemap](https://www.npmjs.com/package/next-sitemap)), meta og
+  - Editor: `npm i draft-js react-draft-wysiwyg`
