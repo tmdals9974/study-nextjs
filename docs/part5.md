@@ -103,3 +103,7 @@ const products = await prisma.products.findMany();
 ### 01. 상세 페이지 구현 (이미지 다루기) (1)
 
 - 상세페이지 이미지를 위해 `react-image-gallery`와 `nuka-carousel` 라이브러리 비교
+
+### 01. 상세 페이지 구현 (이미지 다루기) (2)
+
+- `nuka-carousel`을 이용한 상세페이지 구현
