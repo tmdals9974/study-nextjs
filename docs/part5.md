@@ -114,3 +114,6 @@ const products = await prisma.products.findMany();
 
 ### 02. 상세 페이지 구현 (콘텐츠 다루기) (2)
   - Editor를 이용한 수정 기능 구현
+
+### 03. 상품 목록 구현 (1)
+  - 상품 리스트를 가져오는 api와 페이지 구현
