@@ -124,3 +124,6 @@ const products = await prisma.products.findMany();
 
 ### 04. 카테고리 구현
   - 페이지네이션 상품 목록에서, 카테고리를 필터링 하는 기능 구현
+
+### 05. 검색 구현 (1)
+  - 검색 기능 구현
