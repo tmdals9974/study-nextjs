@@ -1,28 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { PrismaClient } from '@prisma/client'
-import { getOrderBy } from '../../constants/products'
 
 const prisma = new PrismaClient()
 
-async function getProducts({
-  skip,
-  take,
-  category,
-  orderBy,
-  contains,
-}: {
-  skip: number
-  take: number
-  category: number
-  orderBy: string
-  contains: string
-}) {
+async function getProductsCount(category: number, contains: string) {
   const containsCondition =
     contains && contains !== ''
       ? {
           name: { contains: contains },
         }
       : undefined
+
   const where =
     category && category !== -1
       ? {
@@ -32,17 +20,12 @@ async function getProducts({
       : containsCondition
       ? containsCondition
       : undefined
-  const orderByCondition = getOrderBy(orderBy)
+
   try {
-    const response = await prisma.products.findMany({
-      skip: skip,
-      take: take,
-      ...orderByCondition,
-      where: where,
-    })
+    const response = await prisma.products.count({ where: where })
     return response
   } catch (error) {
-    console.error(`get-products error`);
+    console.error(`get-products-count error`);
     console.error(`=============================`);
     console.error(JSON.stringify(error));
     console.error(`=============================`);
@@ -58,21 +41,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { skip, take, category, orderBy, contains } = req.query
-  if (skip == null || take == null) {
-    res.status(400).json({ message: 'no skip or take' })
-    return
-  }
-
+  const { category, contains } = req.query
   try {
-    const products = await getProducts({
-      skip: Number(skip),
-      take: Number(take),
-      category: Number(category),
-      orderBy: String(orderBy),
-      contains: String(contains),
-    })
-
+    const products = await getProductsCount(Number(category), String(contains))
     res.status(200).json({ items: products, message: 'Success' })
   } catch (error) {
     res.status(400).json({ message: 'Failed' })

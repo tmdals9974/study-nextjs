@@ -109,21 +109,33 @@ const products = await prisma.products.findMany();
 - `nuka-carousel`을 이용한 상세페이지 구현
 
 ### 02. 상세 페이지 구현 (콘텐츠 다루기) (1)
-  - SEO: robots.txt, sitemap ([next-sitemap](https://www.npmjs.com/package/next-sitemap)), meta og
-  - Editor: `npm i draft-js react-draft-wysiwyg`
+
+- SEO: robots.txt, sitemap ([next-sitemap](https://www.npmjs.com/package/next-sitemap)), meta og
+- Editor: `npm i draft-js react-draft-wysiwyg`
 
 ### 02. 상세 페이지 구현 (콘텐츠 다루기) (2)
-  - Editor를 이용한 수정 기능 구현
+
+- Editor를 이용한 수정 기능 구현
 
 ### 03. 상품 목록 구현 (1)
-  - 상품 리스트를 가져오는 api와 페이지 구현
+
+- 상품 리스트를 가져오는 api와 페이지 구현
 
 ### 03. 상품 목록 구현 (2)
-  - 상품 리스트를 가져오는 3가지 방법 안내 (더보기 버튼/페이지네이션/인피니트 스크롤)
-  - 더보기/페이지네이션 구현, 인피니트 스크롤은 주의점 설명만
+
+- 상품 리스트를 가져오는 3가지 방법 안내 (더보기 버튼/페이지네이션/인피니트 스크롤)
+- 더보기/페이지네이션 구현, 인피니트 스크롤은 주의점 설명만
 
 ### 04. 카테고리 구현
-  - 페이지네이션 상품 목록에서, 카테고리를 필터링 하는 기능 구현
+
+- 페이지네이션 상품 목록에서, 카테고리를 필터링 하는 기능 구현
 
 ### 05. 검색 구현 (1)
-  - 검색 기능 구현
+
+- 검색 기능 구현
+- `npx ts-node prisma/product-with-category.ts` 명령어로 데이터 주입
+
+### 05. 검색 구현 (2)
+
+- debounce 기능을 구현하여 타이핑이 끝난 후 검색 API 호출
+- react-query 활용
