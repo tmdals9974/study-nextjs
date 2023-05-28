@@ -139,3 +139,7 @@ const products = await prisma.products.findMany();
 
 - debounce 기능을 구현하여 타이핑이 끝난 후 검색 API 호출
 - react-query 활용
+
+### 06. 회원 체계 다루기
+- 회원등급: 비회원/회원/휴면회원/탈퇴회원 
+- 로그인/회원가입의 단순화 필요 (OAuth)
