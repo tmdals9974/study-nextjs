@@ -141,5 +141,10 @@ const products = await prisma.products.findMany();
 - react-query 활용
 
 ### 06. 회원 체계 다루기
-- 회원등급: 비회원/회원/휴면회원/탈퇴회원 
+
+- 회원등급: 비회원/회원/휴면회원/탈퇴회원
 - 로그인/회원가입의 단순화 필요 (OAuth)
+
+### 07. 회원 가입 구현 (1)
+
+- `@react-oauth/google` 라이브러리를 이용한 Google OAuth 기능 구현
