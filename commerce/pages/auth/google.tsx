@@ -6,7 +6,7 @@ export default function Google() {
       <GoogleLogin
         onSuccess={(credentialResponse) => {
           fetch(
-            `/api/get-token?credential=${credentialResponse.credential}`
+            `/api/auth/sign-in?credential=${credentialResponse.credential}`
           )
             .then((res) => res.json())
             .then((data) => console.log(data));

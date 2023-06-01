@@ -148,3 +148,7 @@ const products = await prisma.products.findMany();
 ### 07. 회원 가입 구현 (1)
 
 - `@react-oauth/google` 라이브러리를 이용한 Google OAuth 기능 구현
+
+### 07. 회원 가입 구현 (2)
+
+- Google OAuth 로그인 시 Prisma Upsert로 유저정보 저장/업데이트 기능 구현
