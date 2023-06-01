@@ -152,3 +152,12 @@ const products = await prisma.products.findMany();
 ### 07. 회원 가입 구현 (2)
 
 - Google OAuth 로그인 시 Prisma Upsert로 유저정보 저장/업데이트 기능 구현
+
+### 08. 로그인 구현 (1)
+
+- [NextAuth.js](https://next-auth.js.org/)
+- [NextAuth.js - Prisma Adapter](https://authjs.dev/reference/adapter/prisma)
+- 위 두 라이브러리를 이용한 Google OAuth 로그인 구현. `@react-oauth/google`는 삭제.
+- NextAuth 이용 시 User, Session, Account, VerificationToken 테이블이 필수임. 
+- cookie로 token을 보관하여 인증정보를 관리함.
+- session은 db에 보관함.
