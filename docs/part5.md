@@ -161,3 +161,7 @@ const products = await prisma.products.findMany();
 - NextAuth 이용 시 User, Session, Account, VerificationToken 테이블이 필수임. 
 - cookie로 token을 보관하여 인증정보를 관리함.
 - session은 db에 보관함.
+
+### 08. 로그인 구현 (2)
+
+- PlanetScale과 Prisma의 다양한 사용법 안내 
