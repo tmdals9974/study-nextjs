@@ -165,3 +165,8 @@ const products = await prisma.products.findMany();
 ### 08. 로그인 구현 (2)
 
 - PlanetScale과 Prisma의 다양한 사용법 안내 
+
+### 09. 찜하기 구현 (1)
+
+- WishList 테이블 생성
+- 아이템 상세 페이지 구현
