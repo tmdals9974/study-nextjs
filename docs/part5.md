@@ -170,3 +170,7 @@ const products = await prisma.products.findMany();
 
 - WishList 테이블 생성
 - 아이템 상세 페이지 구현
+- 
+### 09. 찜하기 구현 (2)
+
+- 아이템 상세 페이지에 찜하기 기능 구현
