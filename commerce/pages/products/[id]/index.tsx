@@ -1,12 +1,12 @@
 import CustomEditor from '@components/Editor';
 import { products } from '@prisma/client';
 import { format } from 'date-fns';
-import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
+import { convertFromRaw, EditorState } from 'draft-js';
 import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Carousel from 'nuka-carousel';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CATEGORY_MAP } from 'constants/products';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Button } from '@mantine/core';
@@ -49,7 +49,7 @@ export default function Products(props: {
   const { data: wishlist } = useQuery([WISHLIST_QUERY_KEY], () =>
     fetch(WISHLIST_QUERY_KEY)
       .then((res) => res.json())
-      .then((data) => data.items)
+      .then((data) => data.items || "")
   );
 
   const { mutate } = useMutation<unknown, unknown, string, any>(
@@ -142,9 +142,9 @@ export default function Products(props: {
               disabled={wishlist == null}
               leftIcon={
                 isWished ? (
-                  <Heart size={20} stroke="1.5" />
+                  <Heart size={20} />
                 ) : (
-                  <Heartbeat size={20} stroke="1.5" />
+                  <Heartbeat size={20} />
                 )
               }
               style={{ backgroundColor: isWished ? 'red' : 'grey' }}

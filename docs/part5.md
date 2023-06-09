@@ -158,19 +158,23 @@ const products = await prisma.products.findMany();
 - [NextAuth.js](https://next-auth.js.org/)
 - [NextAuth.js - Prisma Adapter](https://authjs.dev/reference/adapter/prisma)
 - 위 두 라이브러리를 이용한 Google OAuth 로그인 구현. `@react-oauth/google`는 삭제.
-- NextAuth 이용 시 User, Session, Account, VerificationToken 테이블이 필수임. 
+- NextAuth 이용 시 User, Session, Account, VerificationToken 테이블이 필수임.
 - cookie로 token을 보관하여 인증정보를 관리함.
 - session은 db에 보관함.
 
 ### 08. 로그인 구현 (2)
 
-- PlanetScale과 Prisma의 다양한 사용법 안내 
+- PlanetScale과 Prisma의 다양한 사용법 안내
 
 ### 09. 찜하기 구현 (1)
 
 - WishList 테이블 생성
 - 아이템 상세 페이지 구현
-- 
+
 ### 09. 찜하기 구현 (2)
 
 - 아이템 상세 페이지에 찜하기 기능 구현
+
+### 09. 찜하기 구현 (3)
+
+- 아이템 상세 페이지에 찜하기 기능 최종 구현
