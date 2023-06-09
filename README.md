@@ -21,3 +21,9 @@
 - [Part 3. Practice : 블로그 프로젝트](./docs/part3.md)
 - [Part 4. Next.js 심화](./docs/part4.md)
 - [Part 5. Final Project : 커머스 서비스 만들기](./docs/part5.md)
+
+## ✅ 강의 후기
+- 강의 내용이 대부분 공식문서에 있는 내용을 보고, 공식문서에 있는 예제를 실습하는 형식이다.
+- Nextjs 12버전 기준의 강의이다. 그러나 13버전에서의 변경 사항이 많아, 최신버전을 고려한다면 공식문서를 보는게 더 낫다.
+- 같이 사용하는 기술 스택(react, typescript, react-query 등)에 대해선 설명하지 않는다. 
+- 전체적으로 가격에 비해 많이 아쉬움이 남는다. Part 5. Final Project를 진행하다가 중도 하차하였다.
